@@ -27,6 +27,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Initialise project and view terraform plan
+        env:
+          TF_VAR_vpc_id: ${{ secrets.TF_VAR_vpc_id }}
         run: |
           cd terraform
           terraform fmt
@@ -50,6 +52,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Initialise project and deploy terraform
+        env:
+          TF_VAR_vpc_id: ${{ secrets.TF_VAR_vpc_id }}
         run: |
           cd terraform
           terraform fmt
