@@ -58,4 +58,4 @@ jobs:
           cd terraform
           terraform fmt
           terraform init
-          terraform apply
+          terraform apply -auto-approve
